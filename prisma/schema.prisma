@@ -13,7 +13,7 @@ model User {
   passwordHash  String
   userAuthToken String   @unique
   itemy         Itemy[]
-  pieniadze     Int      @default(100)
+  pieniadze     Int      @default(5000)
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 

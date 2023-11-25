@@ -95,7 +95,7 @@ const register: Action = async ({ request }) => {
             passwordHash: password,
             userAuthToken: crypto.randomUUID(),
             role: { connect: { name: Roles.USER } },
-            pieniadze: 100,
+            pieniadze: 5000,
         },
     })
 
