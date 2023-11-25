@@ -5,6 +5,8 @@ declare namespace App {
 		user: {
 			name: string
 			role: string
+			id: string
+			money: int
 		}
 	}
 
@@ -12,6 +14,8 @@ declare namespace App {
 		user: {
 			name: string
 			role: string
+			id: string
+			money: int
 		}
 	}
 	// interface Platform {}

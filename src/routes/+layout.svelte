@@ -13,11 +13,11 @@
 	{/if}
 
 	{#if $page.data.user}
-		<a href="/admin">Admin</a>
+		<a href="/admin">Ekwipunek</a>
 		<a href="/posting">Posty</a>
-
+		<p>Twoje pieniądze: {$page.data.user.money}$</p>
 		<form action="/logout" method="POST">
-			<button type="submit">Log out</button>
+			<button type="submit">Wyloguj</button>
 		</form>
 	{/if}
 </nav>

@@ -8,13 +8,14 @@ datasource db {
 }
 
 model User {
-  id            String @id @default(uuid())
-  username      String @unique
+  id            String   @id @default(uuid())
+  username      String   @unique
   passwordHash  String
-  userAuthToken String @unique
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  userAuthToken String   @unique
+  itemy         Itemy[]
+  pieniadze     Int      @default(100)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 
   role   Roles @relation(fields: [roleId], references: [id])
   roleId Int
@@ -38,4 +39,12 @@ model Post {
   // Define the relationship with User
   userId String
   user   User   @relation(fields: [userId], references: [username])
+}
+
+model Itemy {
+  id      String @id @default(uuid())
+  user    User   @relation(fields: [userId], references: [id])
+  wartosc Int
+  nazwa   String
+  userId  String
 }
