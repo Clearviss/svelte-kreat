@@ -11,7 +11,9 @@
 		<textarea name="poscik" id="poscik" cols="30" rows="10">Tu możesz pisać</textarea> <br />
 		<input type="submit" value="Zapisz" />
 		<button formaction="?/deletePost">Usuń wszystkie (Twoje)</button>
-		<button formaction="?/deletePostall">Usuń wszystkie</button>
+		{#if $page.data.user.role == 'ADMIN'}
+			<button formaction="?/deletePostall">Usuń wszystkie</button>
+		{/if}
 	</form>
 
 	{#each posciki as poscik}

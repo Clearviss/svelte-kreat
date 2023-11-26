@@ -2,7 +2,6 @@ import { db } from "$lib/database";
 import { type RequestHandler, error, json } from "@sveltejs/kit";
 
 export const POST: RequestHandler = async ({ request, locals }) => {
-
     if (!locals.user) {
         throw error(403, { message: "Unauthorized" });
     }
@@ -17,21 +16,18 @@ export const POST: RequestHandler = async ({ request, locals }) => {
     }
 
     const data = await request.json();
-    console.log(data)
-    await db.itemy.delete({
-        where: {
-            id: data.id,
-        }
-    })
+
     await db.user.update({
         where: {
             id: locals.user.id
         },
         data: {
-            pieniadze: locals.user.money + data.wartosc
+            pieniadze: user.pieniadze + data.koszt
         }
     })
+    console.log(user.pieniadze)
 
 
-    return json("ok");
+
+    return json({ pieniadze: user.pieniadze + data.koszt })
 }

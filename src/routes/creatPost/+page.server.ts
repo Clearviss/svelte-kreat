@@ -10,13 +10,6 @@ export const load: PageServerLoad = async () => {
     }
 }
 
-
-
-
-
-
-
-
 export const actions: Actions = {
     creatPost: async ({ request, locals }) => {
         const data = await request.formData()
@@ -37,7 +30,11 @@ export const actions: Actions = {
             }
         })
     },
-    deletePostall: async ({ }) => {
+    deletePostall: async ({ locals }) => {
+        if (locals.user.role != "ADMIN") {
+            return fail(400, { nieadmin: true })
+        }
         await db.post.deleteMany({})
     }
+
 }

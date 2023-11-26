@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>SvelteKit Auth</title>
+	<title>Kreat</title>
 </svelte:head>
 
 <nav>
@@ -13,15 +13,23 @@
 	{/if}
 
 	{#if $page.data.user}
-		<a href="/admin">Ekwipunek</a>
-		<a href="/posting">Posty</a>
 		<p>Twoje pieniądze: {$page.data.user.money}$</p>
-		<form action="/logout" method="POST">
-			<button type="submit">Wyloguj</button>
-		</form>
+		<a href="/admin">Ekwipunek</a>
+		<a href="/creatPost">Posty</a>
+		<a href="/klikaj">Klikaj by zarabiać</a>
+		<span></span>
+		<br />
+		<div>
+			<form action="/logout" method="POST">
+				<button type="submit">Wyloguj</button>
+			</form>
+		</div>
 	{/if}
 </nav>
 
 <main>
 	<slot />
 </main>
+
+<style>
+</style>
