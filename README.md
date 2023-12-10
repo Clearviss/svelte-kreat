@@ -3,16 +3,16 @@
 
 ```bash
 # najpierw
-npm install
+pnpm install
 
 # potem to
-npm run dev
+pnpm run dev
 ```
 
 ## Budowańsko
 
 ```bash
-npm run build
+pnpm run build
 # teraz wszystko jest w
-/build
+/dist
 ```
