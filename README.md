@@ -3,7 +3,7 @@
 
 ```bash
 # najpierw
-pnpm install
+pnpm install --force
 
 # potem to
 pnpm run dev
